@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { profile } from '../data/profile';
 import { projects } from '../data/projects';
+import { technologies } from '../data/technologies';
 import { bilingual as b, useI18n } from '../i18n/context';
 import ProjectCard from '../components/ProjectCard';
 import PixelScene, { PixelIcon } from '../components/PixelScene';
@@ -105,6 +106,9 @@ export default function Home() {
           <span>Spring Boot</span>
           <span>React</span>
           <span>TypeScript</span>
+          <a className="loadout-more" href="#ferramentas">
+            {pick(b('Ver todas', 'See all'))} ↓
+          </a>
         </div>
         <button className="arcade-link" type="button" onClick={openGame}>
           <PixelIcon kind="controller" />
@@ -235,6 +239,50 @@ export default function Home() {
               ▌
             </span>
           </div>
+        </div>
+      </section>
+      <section
+        className="toolbox container"
+        id="ferramentas"
+        tabIndex={-1}
+        aria-labelledby="tools-title"
+      >
+        <div className="toolbox-heading">
+          <p className="eyebrow">
+            <span aria-hidden="true">~/</span> {pick(b('MEU INVENTÁRIO', 'MY INVENTORY'))}
+          </p>
+          <h2 id="tools-title">{pick(b('Ferramentas & tecnologias', 'Tools & technologies'))}</h2>
+          <p>
+            {pick(
+              b(
+                'Tecnologias que uso nos meus projetos. Abra cada área para explorar.',
+                'Technologies I use in my projects. Open each area to explore.',
+              ),
+            )}
+          </p>
+        </div>
+        <div className="toolbox-grid">
+          {technologies.map((group, index) => (
+            <details key={group.title.pt} className="toolbox-group">
+              <summary>
+                <span className="toolbox-number" aria-hidden="true">
+                  0{index + 1}
+                </span>
+                <span>
+                  <strong>{pick(group.title)}</strong>
+                  <small>{group.preview}</small>
+                </span>
+                <span className="toolbox-toggle" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </details>
+          ))}
         </div>
       </section>
       <section

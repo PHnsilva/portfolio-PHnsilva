@@ -30,6 +30,8 @@ Capturas da reformulação, verificadas no navegador:
 - Conteúdo em português e inglês, com preferência salva localmente quando disponível.
 - Contato por links diretos de e-mail, GitHub e LinkedIn.
 - Tema escuro em carvão, cobre e ciano, com retrato original, cenário pixelado e minigame opcional.
+- Inventário de tecnologias em seis áreas expansíveis, com [origem da seleção](docs/technology-sources.md).
+- Pixel racer: carro que acelera sozinho, troca de faixa, obstáculos, distância, pausa e reinício; controles por teclado ou botões no celular.
 - Navegação por teclado, foco visível, link para pular conteúdo e respeito à preferência por movimento reduzido.
 
 Os cartões usam **capturas reais** dos projetos. As páginas de detalhes identificam a origem e o contexto de cada imagem. As telas de acesso são vazias, e a captura local da Sofiie está sem conexão com o servidor. Projetos em equipe têm a autoria preservada; as imagens não contêm dados clínicos ou sessões autenticadas. Veja [a origem das capturas](docs/project-images.md).
@@ -64,6 +66,7 @@ frontend/
 │   ├── components/     Layout, cartões, elementos pixelados, SEO e jogo
 │   ├── data/           Perfil, projetos e origem das imagens
 │   ├── i18n/           Idioma e seleção de conteúdo PT/EN
+│   ├── games/          Simulação de corrida e colisões do Pixel racer
 │   ├── pages/          Início, detalhes e página não encontrada
 │   └── index.css       Paleta, tipografia e regras responsivas
 ├── tests/              Jornadas do visitante
@@ -96,6 +99,8 @@ npm run build
 
 Os testes cobrem apresentação imediata, navegação de detalhes para seções, URLs diretas, página inexistente, idioma e persistência, menu móvel, filtros de autoria, abertura e fechamento do jogo e links externos. Eles não substituem a inspeção visual em navegador.
 
+O motor do jogo também tem testes de aceleração, limites da pista, colisão durante mudança de faixa, passagem segura, espaçamento dos obstáculos e consistência entre taxas de quadros. No jogo, use `←` / `→` ou `A` / `D` para dirigir, `P` para pausar e `Esc` para fechar.
+
 Para conferir o bundle de produção:
 
 ```bash
@@ -123,6 +128,7 @@ O arquivo `frontend/vercel.json` oferece fallback para páginas como `/projetos/
 
 - Perfil, imagem, contatos e URL canônica: `frontend/src/data/profile.ts`.
 - Projetos, participação, status, limites e textos PT/EN: `frontend/src/data/projects.ts`.
+- Inventário de tecnologias: `frontend/src/data/technologies.ts`.
 - Textos da apresentação: `frontend/src/pages/Home.tsx`.
 - Cores e tipografia: `frontend/src/index.css`.
 
