@@ -26,7 +26,7 @@ Capturas da reformulação, verificadas no navegador:
 - Apresentação imediata, com foto, formação e contatos.
 - Galeria com filtros por autoria, capturas reais e seis projetos selecionados: APAC Feminina, CalendarMate, Meritum, PsiHub, Sofiie e SlothSignal.
 - Página de detalhes por projeto, com problema, solução, participação, tecnologias e limitações.
-- Navegação entre páginas e seções, incluindo Tecnologias, com rolagem suave, foco no destino, menu para celular e rota de página não encontrada.
+- Navegação entre páginas e seções, incluindo Tecnologias, com seleção acompanhando a rolagem, foco no destino, menu para celular e rota de página não encontrada.
 - Conteúdo em português e inglês, com preferência salva localmente quando disponível.
 - Formulário compacto de contato, encaminhado ao Gmail pelo FormSubmit, e links diretos de e-mail, GitHub e LinkedIn.
 - Tema escuro em carvão, cobre e ciano, com retrato original, cenário pixelado e minigame opcional.
@@ -101,7 +101,7 @@ Os testes cobrem apresentação imediata, navegação de detalhes para seções,
 
 O motor do jogo também tem testes de aceleração, limites da pista, colisão durante mudança de faixa, passagem segura, espaçamento dos obstáculos e consistência entre taxas de quadros. No jogo, use `←` / `→` ou `A` / `D` para dirigir, `P` para pausar e `Esc` para fechar.
 
-O carro começa a 84 km/h e ganha 2,8 km/h por segundo, até 216 km/h. Esses valores são indicadores do minigame, sem pretensão de simulação física.
+O carro começa a 126 km/h e ganha 4,2 km/h por segundo, até 324 km/h. Esses valores são indicadores do minigame, sem pretensão de simulação física.
 
 Os testes do formulário usam respostas simuladas para verificar validação dos campos, prevenção de envios simultâneos, falhas e preservação da mensagem para nova tentativa. Um teste de envio real deve conferir a aceitação pelo serviço e o recebimento no Gmail separadamente.
 

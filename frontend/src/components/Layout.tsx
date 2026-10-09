@@ -27,7 +27,54 @@ function Header() {
   const { hash, pathname } = useLocation();
   const { lang, toggleLang, pick } = useI18n();
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const menuButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (pathname !== '/') return;
+    const sections = ['inicio', ...navigation.map((item) => item.id)]
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+    let frame = 0;
+    function update() {
+      frame = 0;
+      const headerBottom =
+        document.querySelector('.site-header')?.getBoundingClientRect().bottom ?? 0;
+      const marker = headerBottom + 24;
+      const visibleSections = sections.map((section) => ({
+        id: section.id,
+        bounds: section.getBoundingClientRect(),
+      }));
+      let current = visibleSections.find(
+        ({ bounds }) => bounds.top <= marker && bounds.bottom > marker,
+      )?.id;
+      if (
+        window.scrollY > 0 &&
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2
+      ) {
+        // At the page end, the final section may not reach the header's activation line.
+        const remainingSections = visibleSections.filter(
+          ({ bounds }) => bounds.bottom > headerBottom && bounds.top < window.innerHeight,
+        );
+        current = remainingSections[remainingSections.length - 1]?.id;
+      }
+      setActiveSection(current ?? '');
+    }
+    function schedule() {
+      if (!frame) frame = requestAnimationFrame(update);
+    }
+    schedule();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(schedule);
+    const main = document.getElementById('main-content');
+    if (main) observer?.observe(main);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      observer?.disconnect();
+    };
+  }, [pathname]);
   useEffect(() => {
     if (!open) return;
     const dismiss = (event: KeyboardEvent) => {
@@ -82,7 +129,7 @@ function Header() {
                   requestAnimationFrame(() => focusSection(hash));
                 }
               }}
-              aria-current={hash === `#${item.id}` ? 'location' : undefined}
+              aria-current={activeSection === item.id ? 'location' : undefined}
             >
               <span className="nav-index" aria-hidden="true">
                 0{index + 1}
