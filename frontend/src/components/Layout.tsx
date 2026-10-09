@@ -8,10 +8,23 @@ import { PixelIcon } from './PixelScene';
 const navigation = [
   { id: 'projetos', label: b('Projetos', 'Projects') },
   { id: 'sobre', label: b('Sobre', 'About') },
+  { id: 'ferramentas', label: b('Tecnologias', 'Technologies') },
   { id: 'contato', label: b('Contato', 'Contact') },
 ];
 
+function focusSection(hash: string) {
+  const target = document.getElementById(hash.slice(1));
+  if (!target) return;
+  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  target.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'start' });
+  target.focus({ preventScroll: true });
+  if (!reducedMotion) {
+    target.animate?.([{ opacity: 0.72 }, { opacity: 1 }], { duration: 600, easing: 'ease-out' });
+  }
+}
+
 function Header() {
+  const { hash, pathname } = useLocation();
   const { lang, toggleLang, pick } = useI18n();
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -60,7 +73,17 @@ function Header() {
           aria-label={pick(b('Navegação principal', 'Main navigation'))}
         >
           {navigation.map((item, index) => (
-            <Link key={item.id} to={`/#${item.id}`} onClick={() => setOpen(false)}>
+            <Link
+              key={item.id}
+              to={`/#${item.id}`}
+              onClick={() => {
+                setOpen(false);
+                if (pathname === '/' && hash === `#${item.id}`) {
+                  requestAnimationFrame(() => focusSection(hash));
+                }
+              }}
+              aria-current={hash === `#${item.id}` ? 'location' : undefined}
+            >
               <span className="nav-index" aria-hidden="true">
                 0{index + 1}
               </span>
@@ -91,8 +114,7 @@ export default function Layout() {
     const frame = requestAnimationFrame(() => {
       const target = hash ? document.getElementById(hash.slice(1)) : null;
       if (target) {
-        target.scrollIntoView();
-        target.focus({ preventScroll: true });
+        focusSection(hash);
       } else {
         window.scrollTo(0, 0);
         document.getElementById('main-content')?.focus({ preventScroll: true });

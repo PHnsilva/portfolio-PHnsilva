@@ -26,11 +26,11 @@ Capturas da reformulação, verificadas no navegador:
 - Apresentação imediata, com foto, formação e contatos.
 - Galeria com filtros por autoria, capturas reais e seis projetos selecionados: APAC Feminina, CalendarMate, Meritum, PsiHub, Sofiie e SlothSignal.
 - Página de detalhes por projeto, com problema, solução, participação, tecnologias e limitações.
-- Navegação entre páginas e seções, menu para celular e rota de página não encontrada.
+- Navegação entre páginas e seções, incluindo Tecnologias, com rolagem suave, foco no destino, menu para celular e rota de página não encontrada.
 - Conteúdo em português e inglês, com preferência salva localmente quando disponível.
-- Contato por links diretos de e-mail, GitHub e LinkedIn.
+- Formulário compacto de contato, encaminhado ao Gmail pelo FormSubmit, e links diretos de e-mail, GitHub e LinkedIn.
 - Tema escuro em carvão, cobre e ciano, com retrato original, cenário pixelado e minigame opcional.
-- Inventário de tecnologias em seis áreas expansíveis, com [origem da seleção](docs/technology-sources.md).
+- Ferramentas e tecnologias em seis áreas expansíveis, com [origem da seleção](docs/technology-sources.md).
 - Pixel racer: carro que acelera sozinho, troca de faixa, obstáculos, distância, pausa e reinício; controles por teclado ou botões no celular.
 - Navegação por teclado, foco visível, link para pular conteúdo e respeito à preferência por movimento reduzido.
 
@@ -57,7 +57,7 @@ Navegador → React Router → página inicial ou detalhes do projeto
                   dados profissionais PT/EN
 ```
 
-Aplicação estática, sem backend, formulário de envio, analytics ou credenciais de serviços externos. Inter é usada nos textos, IBM Plex Mono nos detalhes técnicos e Silkscreen nos pequenos elementos de jogo. As fontes são carregadas pelo Google Fonts, com fallback para fontes do sistema. O retrato é servido pelo próprio site.
+Aplicação estática, sem backend próprio ou analytics. O formulário faz uma requisição HTTPS à API AJAX do FormSubmit, que encaminha a mensagem ao Gmail de contato. Não há senha de e-mail ou chave secreta no frontend. Inter é usada nos textos, IBM Plex Mono nos detalhes técnicos e Silkscreen nos pequenos elementos de jogo. As fontes são carregadas pelo Google Fonts, com fallback para fontes do sistema. O retrato é servido pelo próprio site.
 
 ```text
 frontend/
@@ -101,6 +101,10 @@ Os testes cobrem apresentação imediata, navegação de detalhes para seções,
 
 O motor do jogo também tem testes de aceleração, limites da pista, colisão durante mudança de faixa, passagem segura, espaçamento dos obstáculos e consistência entre taxas de quadros. No jogo, use `←` / `→` ou `A` / `D` para dirigir, `P` para pausar e `Esc` para fechar.
 
+O carro começa a 84 km/h e ganha 2,8 km/h por segundo, até 216 km/h. Esses valores são indicadores do minigame, sem pretensão de simulação física.
+
+Os testes do formulário usam respostas simuladas para verificar validação dos campos, prevenção de envios simultâneos, falhas e preservação da mensagem para nova tentativa. Um teste de envio real deve conferir a aceitação pelo serviço e o recebimento no Gmail separadamente.
+
 Para conferir o bundle de produção:
 
 ```bash
@@ -108,6 +112,14 @@ npm run preview
 ```
 
 O endereço normalmente será `http://localhost:4173`.
+
+## Formulário de contato
+
+O destinatário é definido em `frontend/src/data/profile.ts`. O formulário envia somente nome, e-mail e mensagem, com assunto e apresentação configurados no componente `ContactForm.tsx`. O e-mail do visitante permite responder ao contato.
+
+O [FormSubmit](https://formsubmit.co/documentation) exige confirmação do destinatário antes de encaminhar mensagens. Na primeira submissão de um domínio, abrir o e-mail de ativação e confirmar o formulário. Um endereço local ou domínio de prévia pode solicitar uma ativação própria. Não confundir essa confirmação com sucesso no envio de uma mensagem.
+
+O formulário mantém o texto em caso de falha, interrompe uma tentativa após 15 segundos e oferece o endereço de e-mail como alternativa. Não repete envios automaticamente. O serviço externo processa os dados e informa retenção das submissões por 30 dias em sua documentação. Conferir sua [política de privacidade](https://formsubmit.co/privacy.pdf) antes de alterar o serviço.
 
 ## Publicação
 
@@ -128,7 +140,7 @@ O arquivo `frontend/vercel.json` oferece fallback para páginas como `/projetos/
 
 - Perfil, imagem, contatos e URL canônica: `frontend/src/data/profile.ts`.
 - Projetos, participação, status, limites e textos PT/EN: `frontend/src/data/projects.ts`.
-- Inventário de tecnologias: `frontend/src/data/technologies.ts`.
+- Ferramentas e tecnologias: `frontend/src/data/technologies.ts`.
 - Textos da apresentação: `frontend/src/pages/Home.tsx`.
 - Cores e tipografia: `frontend/src/index.css`.
 

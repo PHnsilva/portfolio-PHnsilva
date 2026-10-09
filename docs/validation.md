@@ -27,3 +27,16 @@ A evolução na branch `feat/pixel-racer-and-tools` mantém a direção visual e
 - Tecnologias revisadas a partir dos manifestos dos projetos; fontes em `technology-sources.md`. C, C++ e VS Code preservados da apresentação existente do autor.
 
 Essa segunda inspeção é local; a publicação deve ser confirmada pelo deploy associado ao commit integrado e pela página pública.
+
+## Navegação, apresentação e contato
+
+Data: 9 de outubro de 2026. Base `d3870b2c1fb2d64534b558a212543447387849a8`, já publicada pelo PR #3. Ajustes na branch `feat/portfolio-navigation-contact`.
+
+- Dezoito testes passaram: nove jornadas do visitante, seis verificações da corrida e três do formulário. ESLint, formatação e build passaram.
+- Velocidade inicial e aceleração da corrida dobradas; o painel começa a 84 km/h. Corrida e encerramento conferidos no navegador.
+- Cartões exibem “Saiba mais” e “Projeto e minha contribuição”. O novo link da APAC Feminina abre a página com a participação individual preservada.
+- Tecnologias substitui “Meu inventário” e tem acesso pela navbar. Navegação local e retorno dos detalhes para Tecnologias conferidos, com foco no destino e menu móvel fechado. A rolagem é suave e a transição respeita movimento reduzido.
+- Apresentação revisada em português e inglês, com formação e interesses em qualidade, acessibilidade, usabilidade, sistemas distribuídos, automação, DevOps, interfaces, produtos digitais e jogos.
+- Sobre, Tecnologias e Contato inspecionados em 320, 390 e 768 px e no desktop. Sem rolagem horizontal na página. Captura da apresentação: [about-refinement.jpg](prints/about-refinement.jpg).
+- O formulário valida os campos, bloqueia envios simultâneos e preserva o rascunho em falhas. Os três testes usam respostas simuladas; não comprovam entrega de e-mail.
+- Após a ativação confirmada pelo proprietário, o serviço aceitou o envio real com a origem do domínio público. Pedro confirmou o recebimento no Gmail e forneceu uma captura da mensagem. O endereço local solicitou ativação própria e exibiu erro, preservando o texto. A submissão pelo navegador de produção deve ser conferida após o deploy.

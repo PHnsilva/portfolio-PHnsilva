@@ -14,15 +14,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       >
         <ProjectVisual project={project} />
         <span className="art-open" aria-hidden="true">
-          ↗
+          {pick(b('Saiba mais', 'Learn more'))} <span>↗</span>
         </span>
       </Link>
       <div className="project-copy">
         <div className="project-meta">
           <span>{pick(project.category)}</span>
-          <span className="project-index" aria-hidden="true">
-            ↗
-          </span>
         </div>
         <h3>
           <Link to={`/projetos/${project.slug}`}>{project.title}</Link>
@@ -33,6 +30,19 @@ export default function ProjectCard({ project }: { project: Project }) {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        <Link
+          className="project-details-link"
+          to={`/projetos/${project.slug}`}
+          aria-label={pick(
+            b(
+              `Saiba mais sobre ${project.title}: projeto e minha contribuição`,
+              `Learn more about ${project.title}: project and my contribution`,
+            ),
+          )}
+        >
+          <span>{pick(b('Projeto e minha contribuição', 'Project and my contribution'))}</span>
+          <span aria-hidden="true">→</span>
+        </Link>
       </div>
     </article>
   );

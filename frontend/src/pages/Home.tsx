@@ -7,6 +7,7 @@ import { bilingual as b, useI18n } from '../i18n/context';
 import ProjectCard from '../components/ProjectCard';
 import PixelScene, { PixelIcon } from '../components/PixelScene';
 import Seo from '../components/Seo';
+import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   const { pick } = useI18n();
@@ -183,7 +184,7 @@ export default function Home() {
           <p className="eyebrow">
             <span aria-hidden="true">02 /</span> {pick(b('SOBRE', 'ABOUT'))}
           </p>
-          <h2 id="about-title">{pick(b('Além do código', 'Beyond the code'))}</h2>
+          <h2 id="about-title">{pick(b('Sobre mim', 'About me'))}</h2>
           <p>
             {pick(
               b(
@@ -195,8 +196,16 @@ export default function Home() {
           <p>
             {pick(
               b(
-                'Gosto de desenvolver interfaces, entender o que acontece no backend e conectar os dois. Jogos, tecnologia e projetos pessoais também fazem parte do meu tempo fora da faculdade.',
-                'I enjoy building interfaces, understanding the backend and connecting the two. Games, technology and personal projects are also part of my time outside university.',
+                'Desenvolvo aplicações web, APIs e integrações em projetos pessoais, acadêmicos e em equipe. Meus interesses incluem qualidade de software, acessibilidade, usabilidade e sistemas distribuídos.',
+                'I develop web applications, APIs and integrations in personal, academic and team projects. My interests include software quality, accessibility, usability and distributed systems.',
+              ),
+            )}
+          </p>
+          <p>
+            {pick(
+              b(
+                'Também exploro automação, DevOps, design de interfaces e produtos digitais. Jogos e criação digital fazem parte dos meus interesses pessoais.',
+                'I also explore automation, DevOps, interface design and digital products. Games and digital creation are among my personal interests.',
               ),
             )}
           </p>
@@ -232,7 +241,33 @@ export default function Home() {
               </div>
               <div>
                 <dt>{pick(b('interesses', 'interests'))}</dt>
-                <dd>web · backend · games</dd>
+                <dd>
+                  {pick(
+                    b('web · APIs · sistemas distribuídos', 'web · APIs · distributed systems'),
+                  )}
+                  <small>
+                    {pick(
+                      b(
+                        'qualidade · acessibilidade · usabilidade',
+                        'quality · accessibility · usability',
+                      ),
+                    )}
+                  </small>
+                </dd>
+              </div>
+              <div>
+                <dt>{pick(b('explorando', 'exploring'))}</dt>
+                <dd>
+                  {pick(
+                    b(
+                      'automação · DevOps · produtos digitais',
+                      'automation · DevOps · digital products',
+                    ),
+                  )}
+                  <small>
+                    {pick(b('design de interfaces · jogos', 'interface design · games'))}
+                  </small>
+                </dd>
               </div>
             </dl>
             <span className="terminal-cursor" aria-hidden="true">
@@ -249,7 +284,7 @@ export default function Home() {
       >
         <div className="toolbox-heading">
           <p className="eyebrow">
-            <span aria-hidden="true">~/</span> {pick(b('MEU INVENTÁRIO', 'MY INVENTORY'))}
+            <span aria-hidden="true">03 /</span> {pick(b('TECNOLOGIAS', 'TECHNOLOGIES'))}
           </p>
           <h2 id="tools-title">{pick(b('Ferramentas & tecnologias', 'Tools & technologies'))}</h2>
           <p>
@@ -291,26 +326,29 @@ export default function Home() {
         tabIndex={-1}
         aria-labelledby="contact-title"
       >
-        <div>
-          <p className="eyebrow">
-            <span aria-hidden="true">03 /</span> {pick(b('CONTATO', 'CONTACT'))}
-          </p>
-          <h2 id="contact-title">{pick(b('Onde me encontrar', 'Where to find me'))}</h2>
-        </div>
-        <div className="contact-links">
-          <a className="email-link" href={`mailto:${profile.email}`}>
-            {profile.email}
-            <span aria-hidden="true">↗</span>
-          </a>
-          <div className="contact-socials">
-            <a href={profile.github} target="_blank" rel="noopener noreferrer">
-              GitHub <span aria-hidden="true">↗</span>
+        <div className="contact-info">
+          <div>
+            <p className="eyebrow">
+              <span aria-hidden="true">04 /</span> {pick(b('CONTATO', 'CONTACT'))}
+            </p>
+            <h2 id="contact-title">{pick(b('Onde me encontrar', 'Where to find me'))}</h2>
+          </div>
+          <div className="contact-links">
+            <a className="email-link" href={`mailto:${profile.email}`}>
+              {profile.email}
+              <span aria-hidden="true">↗</span>
             </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn <span aria-hidden="true">↗</span>
-            </a>
+            <div className="contact-socials">
+              <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </div>
+        <ContactForm />
       </section>
     </>
   );
