@@ -1,29 +1,19 @@
-import { useState } from "react";
-import RareProfessionalIntro from "./components/UI/RareProfessionalIntro";
-import AppRoutes from "./routes/AppRoutes";
-import FlappyWidget from "./components/Flappy/FlappyWidget";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import ProjectDetails from './pages/ProjectDetails';
+import NotFound from './pages/NotFound';
 
 export default function App() {
-  const [showIntro, setShowIntro] = useState(true);
-  const [introFinished, setIntroFinished] = useState(false);
-
   return (
-    <>
-      {showIntro && (
-        <RareProfessionalIntro
-          onFinish={() => {
-            setShowIntro(false);
-            setIntroFinished(true);
-          }}
-        />
-      )}
-
-      <div className={`${showIntro ? "siteBehind" : ""} ${introFinished ? "introDone" : ""}`}>
-        <div className="siteContent">
-          <AppRoutes introFinished={introFinished} />
-          <FlappyWidget />
-        </div>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="projetos/:slug" element={<ProjectDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
