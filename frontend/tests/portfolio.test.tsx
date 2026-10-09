@@ -87,6 +87,15 @@ describe('Portfolio visitor journeys', () => {
     mount();
     await user.click(screen.getByRole('button', { name: 'Pixel break' }));
     await waitFor(() => expect(screen.getByRole('dialog').hasAttribute('open')).toBe(true));
+    expect(screen.getByRole('heading', { name: 'Pixel racer' })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Começar' }));
+    expect(screen.getByRole('button', { name: 'Virar à esquerda' }).hasAttribute('disabled')).toBe(
+      false,
+    );
+    await user.click(screen.getByRole('button', { name: 'Pausar' }));
+    expect(screen.getByText('Em pausa')).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Continuar' }));
+    expect(screen.getByText('Na pista')).toBeTruthy();
     await user.click(screen.getByRole('button', { name: 'Fechar jogo' }));
     expect(screen.queryByRole('dialog')).toBeNull();
     await user.click(screen.getByRole('button', { name: 'Jogar um pouco' }));

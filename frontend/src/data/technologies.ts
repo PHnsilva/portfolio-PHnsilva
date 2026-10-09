@@ -1,0 +1,76 @@
+import { bilingual as b } from '../i18n/context';
+// Based on repository manifests; see docs/technology-sources.md.
+export const technologies = [
+  {
+    title: b('Linguagens', 'Languages'),
+    preview: 'Java · TypeScript · Python · C#',
+    items: [
+      'Java',
+      'TypeScript',
+      'JavaScript',
+      'Python',
+      'C#',
+      'C',
+      'C++',
+      'Dart',
+      'Rust',
+      'HTML',
+      'CSS',
+      'SQL',
+    ],
+  },
+  {
+    title: b('Web, mobile & desktop', 'Web, mobile & desktop'),
+    preview: 'React · Next.js · Flutter · Tauri',
+    items: ['React', 'Next.js', 'Flutter', 'Tauri', 'Vite'],
+  },
+  {
+    title: b('Backend & APIs', 'Backend & APIs'),
+    preview: 'Spring Boot · .NET · NestJS · FastAPI',
+    items: ['Spring Boot', 'ASP.NET Core', 'NestJS', 'FastAPI', 'Fastify', 'Micronaut', 'Node.js'],
+  },
+  {
+    title: b('Dados & integrações', 'Data & integrations'),
+    preview: 'PostgreSQL · MongoDB · RabbitMQ',
+    items: [
+      'PostgreSQL',
+      'MongoDB',
+      'Supabase',
+      'Prisma',
+      'TypeORM',
+      'Entity Framework Core',
+      'RabbitMQ',
+      'Web Push',
+      'Google Calendar API',
+    ],
+  },
+  {
+    title: b('Ferramentas & entrega', 'Tools & delivery'),
+    preview: 'Git · Docker · GitHub Actions',
+    items: [
+      'Git',
+      'GitHub',
+      'Docker',
+      'GitHub Actions',
+      'Maven',
+      'Postman',
+      'Swagger / OpenAPI',
+      'Vercel',
+      'VS Code',
+    ],
+  },
+  {
+    title: b('Testes & qualidade', 'Testing & quality'),
+    preview: 'JUnit · Vitest · pytest · Playwright',
+    items: [
+      'JUnit',
+      'Vitest',
+      'pytest',
+      'Playwright',
+      'Testing Library',
+      'Supertest',
+      'ESLint',
+      'Prettier',
+    ],
+  },
+];

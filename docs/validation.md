@@ -12,3 +12,18 @@ Data: 8 de outubro de 2026. Reformulação baseada em `94673a6` de `master`, val
 - Nenhum erro ou aviso no console da prévia inspecionada.
 
 As capturas em `docs/prints/` são desta versão. Essa validação confirma a prévia local, não uma publicação remota. A proteção/regras de produção não foram alteradas.
+
+## Ampliação de tecnologias e Pixel racer
+
+Data: 9 de outubro de 2026. A versão aprovada foi integrada pelo PR #2, em `91ad880a3890025efc592d1f0a42950ab50b566a`, com deploy de produção concluído e página pública conferida no navegador.
+
+A evolução na branch `feat/pixel-racer-and-tools` mantém a direção visual e acrescenta o inventário de tecnologias e a corrida de carro pixelado.
+
+- Quatorze testes passaram: nove jornadas do visitante e cinco testes da simulação de corrida.
+- ESLint, formatação e build TypeScript/Vite passaram.
+- Corrida automática, aceleração, mudança de faixa por teclado e botões, colisão, fim de jogo, reinício e pausa conferidos no navegador.
+- Jogo e inventário inspecionados em 320 × 568 e 390 × 844 px e no desktop; sem rolagem horizontal. O diálogo cabe na tela pequena com seus controles acessíveis.
+- Expansão das áreas de tecnologia e tradução do jogo para inglês conferidas. Escape fecha o diálogo.
+- Tecnologias revisadas a partir dos manifestos dos projetos; fontes em `technology-sources.md`. C, C++ e VS Code preservados da apresentação existente do autor.
+
+Essa segunda inspeção é local; a publicação deve ser confirmada pelo deploy associado ao commit integrado e pela página pública.
