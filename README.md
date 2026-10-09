@@ -1,373 +1,139 @@
-# 🏷️ Portfólio PHnsilva
+# Pedro Silva — Portfólio
 
-Portfólio web desenvolvido em grupo com foco em apresentação profissional, organização de conteúdo e experiência visual interativa.  
-A aplicação reúne informações sobre perfil, experiências, formação, projetos, competências e contato, além de incluir elementos diferenciados como **suporte a múltiplos idiomas** e um **minigame Flappy** integrado ao projeto.
+Portfólio de **Pedro Henrique Silva Vargas**, estudante de Engenharia de Software na PUC Minas e técnico em Eletroeletrônica pelo SENAI Itabirito. Reúne projetos pessoais e em equipe, com contexto do problema, participação e estado de cada entrega.
 
----
+[![Portfolio checks](https://github.com/PHnsilva/portfolio-PHnsilva/actions/workflows/ci.yml/badge.svg)](https://github.com/PHnsilva/portfolio-PHnsilva/actions/workflows/ci.yml)
 
-## 🚧 Status do Projeto
-![Vite](https://img.shields.io/badge/Vite-latest-007ec6?style=for-the-badge&logo=vite&logoColor=white)
-![React](https://img.shields.io/badge/React-latest-007ec6?style=for-the-badge&logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-latest-007ec6?style=for-the-badge&logo=typescript&logoColor=white)
-![CSS Modules](https://img.shields.io/badge/CSS%20Modules-styled-007ec6?style=for-the-badge)
-![License](https://img.shields.io/github/license/PHnsilva/portfolio-grupo?style=for-the-badge)
+- **Site:** [portfolio-phnsilva.vercel.app](https://portfolio-phnsilva.vercel.app)
+- **Repositório:** [PHnsilva/portfolio-PHnsilva](https://github.com/PHnsilva/portfolio-PHnsilva)
+- **Direção visual e curadoria:** [docs/portfolio-direction.md](docs/portfolio-direction.md)
+- **Padrão para revisão dos READMEs:** [docs/README-standard.md](docs/README-standard.md)
 
----
+## Status
 
-## 📚 Índice
-- [Links Úteis](#-links-úteis)
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Funcionalidades](#-funcionalidades)
-- [Tecnologias](#-tecnologias)
-- [Arquitetura](#-arquitetura)
-- [Como Rodar Localmente](#-como-rodar-localmente)
-- [Build](#-build)
-- [Deploy](#-deploy)
-- [Estrutura de Pastas](#-estrutura-de-pastas)
-- [Demonstração](#-demonstração)
-- [Testes](#-testes)
-- [Autores](#-autores)
-- [Licença](#-licença)
+O portfólio usa a branch `master` como origem da publicação na Vercel. A interface tem tema escuro, foto original e elementos de pixel game. O histórico de validação está em [docs/validation.md](docs/validation.md).
 
----
+## Demonstração
 
-## 🔗 Links Úteis
-- 🐙 **Repositório:** https://github.com/PHnsilva/portfolio-grupo.git
-- 🌐 **Demo:** https://portfolio-grupo.vercel.app
-- 🧩 **Wireframe:** https://www.figma.com/design/cj6OHrQLX4ekdmerVQJfY4/Untitled?node-id=0-1&t=HXfjQX6N9eGa6xbW-1
+Capturas da reformulação, verificadas no navegador:
 
----
+| Desktop                                                                    | Celular                                                               |
+| -------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Abertura do portfólio no desktop](docs/prints/reformulation-desktop.jpg) | ![Portfólio em tela de celular](docs/prints/reformulation-mobile.jpg) |
 
-## 📝 Sobre o Projeto
-Este projeto é um **portfólio web responsivo** criado para apresentar informações acadêmicas e profissionais de forma moderna, organizada e personalizável.  
+## Funcionalidades
 
-A aplicação foi estruturada em seções independentes, facilitando a manutenção e a adaptação do conteúdo para diferentes integrantes do grupo. Entre os destaques do projeto estão:
+- Apresentação imediata, com foto, formação e contatos.
+- Galeria com filtros por autoria, capturas reais e seis projetos selecionados: APAC Feminina, CalendarMate, Meritum, PsiHub, Sofiie e SlothSignal.
+- Página de detalhes por projeto, com problema, solução, participação, tecnologias e limitações.
+- Navegação entre páginas e seções, menu para celular e rota de página não encontrada.
+- Conteúdo em português e inglês, com preferência salva localmente quando disponível.
+- Contato por links diretos de e-mail, GitHub e LinkedIn.
+- Tema escuro em carvão, cobre e ciano, com retrato original, cenário pixelado e minigame opcional.
+- Navegação por teclado, foco visível, link para pular conteúdo e respeito à preferência por movimento reduzido.
 
-- navegação por páginas e seções bem definidas;
-- exibição de perfil, experiências, formação, projetos, competências e contato;
-- detalhamento de projetos em rota específica;
-- suporte a **internacionalização (PT/EN)**;
-- componente interativo com **minigame Flappy**;
-- organização modular com **React + TypeScript + CSS Modules**.
+Os cartões usam **capturas reais** dos projetos. As páginas de detalhes identificam a origem e o contexto de cada imagem. As telas de acesso são vazias, e a captura local da Sofiie está sem conexão com o servidor. Projetos em equipe têm a autoria preservada; as imagens não contêm dados clínicos ou sessões autenticadas. Veja [a origem das capturas](docs/project-images.md).
 
----
+## Projetos em destaque
 
-## ✨ Funcionalidades
-- Página inicial com apresentação do perfil
-- Seção **Sobre**
-- Seção **Experiência**
-- Seção **Formação**
-- Seção **Projetos**
-- Seção **Competências**
-- Seção **Contato**
-- **Internacionalização** com troca de idioma
-- **Minigame Flappy** integrado à experiência do site
-- Layout reutilizável com **Navbar** e **Footer**
-- Página **Not Found** para rotas inválidas
+| Projeto       | Apresentação                                                                                          | Código                                                  |
+| ------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| APAC Feminina | [Gestão de medicamentos e estoque](https://portfolio-phnsilva.vercel.app/projetos/apac-feminina)      | Projeto em equipe, repositório restrito                 |
+| CalendarMate  | [Agendamentos e integrações](https://portfolio-phnsilva.vercel.app/projetos/calendar-mate)            | [Repositório](https://github.com/PHnsilva/CalendarMate) |
+| Meritum       | [Moeda estudantil e reconhecimento acadêmico](https://portfolio-phnsilva.vercel.app/projetos/meritum) | [Repositório](https://github.com/PHnsilva/Meritum)      |
+| PsiHub        | [Plataforma web e mobile para psicólogos](https://portfolio-phnsilva.vercel.app/projetos/psihub)      | Projeto em equipe, repositório restrito                 |
+| Sofiie        | [Assistente por texto e voz](https://portfolio-phnsilva.vercel.app/projetos/sofiie)                   | [Repositório](https://github.com/PHnsilva/Sofiie)       |
+| SlothSignal   | [Notificações Web Push](https://portfolio-phnsilva.vercel.app/projetos/sloth-signal)                  | [Repositório](https://github.com/PHnsilva/SlothSignal)  |
 
----
+## Tecnologias e arquitetura
 
-## 🛠 Tecnologias
-- **React**
-- **Vite**
-- **TypeScript**
-- **CSS Modules**
-- **React Router**
-- **ESLint**
+**React 19, TypeScript, React Router e Vite 8**, com CSS próprio. Vitest e Testing Library verificam jornadas do visitante. ESLint e Prettier verificam código e formatação. As versões efetivamente instaladas estão no [lockfile](frontend/package-lock.json).
 
----
+```text
+Navegador → React Router → página inicial ou detalhes do projeto
+                           ↓
+                  dados profissionais PT/EN
+```
 
-## 🏗️ Arquitetura
+Aplicação estática, sem backend, formulário de envio, analytics ou credenciais de serviços externos. Inter é usada nos textos, IBM Plex Mono nos detalhes técnicos e Silkscreen nos pequenos elementos de jogo. As fontes são carregadas pelo Google Fonts, com fallback para fontes do sistema. O retrato é servido pelo próprio site.
 
-O projeto segue uma arquitetura **frontend modular**, separada por responsabilidades, tornando o código mais organizado, reutilizável e escalável.
+```text
+frontend/
+├── public/             Retrato, favicon e robots.txt
+├── src/
+│   ├── components/     Layout, cartões, elementos pixelados, SEO e jogo
+│   ├── data/           Perfil, projetos e origem das imagens
+│   ├── i18n/           Idioma e seleção de conteúdo PT/EN
+│   ├── pages/          Início, detalhes e página não encontrada
+│   └── index.css       Paleta, tipografia e regras responsivas
+├── tests/              Jornadas do visitante
+└── vercel.json         Rotas diretas e cabeçalhos
+```
 
-### Visão Geral
-- **`frontend/src/pages`** → páginas principais da aplicação
-- **`frontend/src/components`** → componentes reutilizáveis e estruturais
-- **`frontend/src/data`** → dados estáticos do portfólio
-- **`frontend/src/types`** → tipagens TypeScript compartilhadas
-- **`frontend/src/routes`** → configuração central de rotas
-- **`frontend/src/i18n`** → dicionários e provider de internacionalização
-- **`frontend/src/styles`** → estilos modulares por página/componente
-- **`frontend/src/assets`** → arquivos visuais estáticos
+## Execução local
 
-### Camadas
+Pré-requisitos: Git, **Node.js 24** e npm. A partir de um clone limpo:
 
-#### 1) Apresentação
-Responsável pela interface e renderização visual do conteúdo.
-
-**Páginas (`pages/`)**
-- `Home`
-- `About`
-- `Experience`
-- `Education`
-- `Projects`
-- `ProjectDetails`
-- `Skills`
-- `Contact`
-- `NotFound`
-
-**Componentes (`components/`)**
-- **Layout/** → estrutura global da aplicação
-  - `Navbar`
-  - `Footer`
-  - `Layout`
-- **UI/** → blocos reutilizáveis da interface
-  - `SectionTitle`
-  - `ProjectCard`
-  - `ExperienceCard`
-  - `Tag`
-  - `TerminalText`
-  - `RareProfessionalIntro`
-- **Flappy/** → componentes do minigame
-  - `FlappyGame`
-  - `FlappyWidget`
-  - `useReachedBottom`
-
-#### 2) Dados
-Responsável por centralizar os conteúdos exibidos nas páginas.
-
-Arquivos em `data/`:
-- `profile.ts`
-- `experience.ts`
-- `education.ts`
-- `projects.ts`
-- `skills.ts`
-
-Essa abordagem facilita:
-- personalização por integrante;
-- manutenção sem alterar a lógica visual;
-- futura integração com APIs ou CMS.
-
-#### 3) Internacionalização
-Responsável pela tradução e troca de idioma do site.
-
-Arquivos em `i18n/`:
-- `dictionaries.ts`
-- `I18nProvider.tsx`
-
-Permite manter o conteúdo em múltiplos idiomas de forma centralizada e reutilizável.
-
-#### 4) Tipagem
-Responsável por definir contratos de dados com TypeScript.
-
-Arquivo:
-- `types/portfolio.ts`
-
-Benefícios:
-- consistência entre dados e componentes;
-- melhor manutenção;
-- redução de erros em tempo de desenvolvimento.
-
-#### 5) Roteamento
-Responsável pela navegação entre páginas e rotas da aplicação.
-
-Arquivo:
-- `routes/AppRoutes.tsx`
-
-### Fluxo de Renderização
-1. `main.tsx` inicializa a aplicação
-2. `App.tsx` carrega a estrutura principal
-3. `AppRoutes.tsx` define a rota exibida
-4. As páginas consomem dados de `data/`
-5. Os componentes reutilizáveis constroem a interface
-6. O provider de `i18n` controla o idioma ativo
-
-### Princípios adotados
-- Separação de responsabilidades
-- Reutilização de componentes
-- Tipagem forte com TypeScript
-- Organização escalável
-- Facilidade de personalização
-- Estrutura preparada para evolução futura
-
----
-
-## 🔧 Como Rodar Localmente
-
-### Pré-requisitos
-- Node.js (versão LTS recomendada)
-- npm
-
-### Instalação
 ```bash
-cd frontend
-npm install
-
-### Ambiente de desenvolvimento
-```bash
+git clone https://github.com/PHnsilva/portfolio-PHnsilva.git
+cd portfolio-PHnsilva/frontend
+npm ci
 npm run dev
 ```
 
-A aplicação ficará disponível em:
+Abra o endereço exibido pelo Vite, normalmente `http://localhost:5173`. Não há arquivo `.env` obrigatório.
+
+## Verificação
+
+Dentro de `frontend/`:
 
 ```bash
-http://localhost:5173
+npm run lint
+npm run format:check
+npm test
+npm run build
 ```
 
----
+Os testes cobrem apresentação imediata, navegação de detalhes para seções, URLs diretas, página inexistente, idioma e persistência, menu móvel, filtros de autoria, abertura e fechamento do jogo e links externos. Eles não substituem a inspeção visual em navegador.
 
-## 🧱 Build
+Para conferir o bundle de produção:
+
 ```bash
-cd frontend
-npm run build
 npm run preview
 ```
 
----
+O endereço normalmente será `http://localhost:4173`.
 
-## 🚀 Deploy
-O projeto pode ser publicado facilmente em plataformas de hospedagem para frontend estático, como:
+## Publicação
 
-- **Vercel**
-- **Netlify**
+Na Vercel, o projeto deve usar:
 
----
+| Configuração      | Valor           |
+| ----------------- | --------------- |
+| Root Directory    | `frontend`      |
+| Build Command     | `npm run build` |
+| Output Directory  | `dist`          |
+| Install Command   | `npm ci`        |
+| Node.js           | `24.x`          |
+| Production Branch | `master`        |
 
-## 📁 Estrutura de Pastas
+O arquivo `frontend/vercel.json` oferece fallback para páginas como `/projetos/calendar-mate`, preservando arquivos estáticos. Após integrar o pull request, conferir o deploy e abrir uma rota de projeto diretamente. Uma compilação local não confirma publicação remota.
 
-```txt
-.
-├── docs/
-│   └── prints/
-│       ├── competencias.png
-│       ├── contatos.png
-│       ├── experiencias.png
-│       ├── formacao.png
-│       ├── inicio.png
-│       ├── projetos.png
-│       └── sobre.png
-│
-├── frontend/
-│   ├── dist/
-│   ├── node_modules/
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   │   └── react.svg
-│   │   │
-│   │   ├── components/
-│   │   │   ├── Flappy/
-│   │   │   │   ├── FlappyGame.tsx
-│   │   │   │   ├── FlappyWidget.tsx
-│   │   │   │   └── useReachedBottom.ts
-│   │   │   │
-│   │   │   ├── Layout/
-│   │   │   │   ├── Footer.tsx
-│   │   │   │   ├── Layout.tsx
-│   │   │   │   └── Navbar.tsx
-│   │   │   │
-│   │   │   └── UI/
-│   │   │       ├── ExperienceCard.tsx
-│   │   │       ├── ProjectCard.tsx
-│   │   │       ├── RareProfessionalIntro.tsx
-│   │   │       ├── SectionTitle.tsx
-│   │   │       ├── Tag.tsx
-│   │   │       └── TerminalText.tsx
-│   │   │
-│   │   ├── data/
-│   │   │   ├── education.ts
-│   │   │   ├── experience.ts
-│   │   │   ├── profile.ts
-│   │   │   ├── projects.ts
-│   │   │   └── skills.ts
-│   │   │
-│   │   ├── i18n/
-│   │   │   ├── dictionaries.ts
-│   │   │   └── I18nProvider.tsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── About.tsx
-│   │   │   ├── Contact.tsx
-│   │   │   ├── Education.tsx
-│   │   │   ├── Experience.tsx
-│   │   │   ├── Home.tsx
-│   │   │   ├── NotFound.tsx
-│   │   │   ├── ProjectDetails.tsx
-│   │   │   ├── Projects.tsx
-│   │   │   └── Skills.tsx
-│   │   │
-│   │   ├── routes/
-│   │   │   └── AppRoutes.tsx
-│   │   │
-│   │   ├── styles/
-│   │   │   ├── About.module.css
-│   │   │   ├── Contact.module.css
-│   │   │   ├── Education.module.css
-│   │   │   ├── Experience.module.css
-│   │   │   ├── ExperienceCard.module.css
-│   │   │   ├── Home.module.css
-│   │   │   ├── Navbar.module.css
-│   │   │   ├── Projects.module.css
-│   │   │   ├── RareProfessionalIntro.module.css
-│   │   │   └── Skills.module.css
-│   │   │
-│   │   ├── types/
-│   │   │   └── portfolio.ts
-│   │   │
-│   │   ├── App.tsx
-│   │   ├── index.css
-│   │   ├── main.tsx
-│   │   ├── shims.d.ts
-│   │   └── vite-env.d.ts
-│   │
-│   ├── .gitignore
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── README.md
-│   ├── tsconfig.app.json
-│   ├── tsconfig.json
-│   ├── tsconfig.node.json
-│   └── vite.config.ts
-│
-├── LICENSE
-└── README.md
-```
+## Atualizar conteúdo
 
----
+- Perfil, imagem, contatos e URL canônica: `frontend/src/data/profile.ts`.
+- Projetos, participação, status, limites e textos PT/EN: `frontend/src/data/projects.ts`.
+- Textos da apresentação: `frontend/src/pages/Home.tsx`.
+- Cores e tipografia: `frontend/src/index.css`.
 
-## 🎥 Demonstração
+Para novos projetos, incluir contexto, contribuição e estado nas duas línguas. Não inserir links de demonstração inexistentes ou dados privados. Conferir a versão publicada do projeto antes de alterar seu status.
 
-### Início
-![Tela inicial](docs/prints/inicio.png)
+## Contribuição e autoria
 
-### Sobre
-![Seção sobre](docs/prints/sobre.png)
+Esta versão evolui a base acadêmica do portfólio desenvolvido com **Felipe Parreiras** e **Gabriel Nonato**, preservando seus créditos. A personalização e a reformulação deste repositório são voltadas ao portfólio de Pedro Silva.
 
-### Experiência
-![Seção de experiência](docs/prints/experiencias.png)
+Alterações devem partir de uma branch própria, passar pelas verificações e ser apresentadas em pull request para `master`. As referências de design e os critérios editoriais estão em [docs/portfolio-direction.md](docs/portfolio-direction.md).
 
-### Formação
-![Seção de formação](docs/prints/formacao.png)
+## Licença
 
-### Projetos
-![Seção de projetos](docs/prints/projetos.png)
-
-### Competências
-![Seção de competências](docs/prints/competencias.png)
-
-### Contato
-![Seção de contato](docs/prints/contatos.png)
-
-### Minigame Flappy
-O projeto também inclui um **minigame Flappy**, utilizado como elemento interativo para enriquecer a experiência do usuário durante a navegação.
-
----
-
-## 👥 Autores
-
-Projeto desenvolvido em grupo.
-
-| Nome | GitHub | LinkedIn |
-|------|--------|----------|
-| Pedro H. S. | https://github.com/PHnsilva | https://www.linkedin.com/in/phnsilva1/ |
-| Felipe P. | https://github.com/FelipeParreiras | https://www.linkedin.com/in/felipe-parreiras04/ |
-| Gabriel P. | https://github.com/GpNonato | https://www.linkedin.com/in/gabriel-nonato-3a3a98376/ |
-
----
-
-## 📄 Licença
-Este projeto está sob a licença **MIT**.  
-Consulte o arquivo `LICENSE` para mais detalhes.
+[MIT](LICENSE), conforme o arquivo de licença existente no repositório.
