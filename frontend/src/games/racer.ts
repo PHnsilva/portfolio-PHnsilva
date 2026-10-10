@@ -16,7 +16,7 @@ export function newRace(): Race {
     x: 170,
     seconds: 0,
     distance: 0,
-    speed: 315,
+    speed: 252,
     untilSpawn: 100,
     obstacles: [],
     crashed: false,
@@ -33,7 +33,7 @@ export function advance(race: Race, elapsed: number, random = Math.random) {
     const dt = Math.min(remaining, 1 / 120);
     remaining -= dt;
     race.seconds += dt;
-    race.speed = Math.min(810, 315 + race.seconds * 10.5);
+    race.speed = Math.min(504, 252 + race.seconds * 5.6);
     const travel = race.speed * dt;
     race.distance += travel / 5;
     const target = ROAD.lanes[race.lane];

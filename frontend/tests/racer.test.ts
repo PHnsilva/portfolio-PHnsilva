@@ -7,16 +7,18 @@ describe('pixel racer', () => {
     for (let i = 0; i < 3600; i++) advance(race, 1 / 60, () => 0);
     expect(race.crashed).toBe(false);
     expect(race.distance).toBeGreaterThan(2000);
-    expect(race.speed).toBe(810);
+    expect(race.speed).toBe(newRace().speed * 2);
     expect(race.obstacles.every((o) => o.y < ROAD.height + 48)).toBe(true);
     const rows = race.obstacles.map((o) => o.y).sort((a, b) => a - b);
-    for (let i = 1; i < rows.length; i++) expect(rows[i] - rows[i - 1]).toBeGreaterThan(178);
+    for (let i = 1; i < rows.length; i++) expect(rows[i] - rows[i - 1]).toBeGreaterThan(180);
   });
-  it('runs at 1.5 times the previous speed profile', () => {
+  it('starts 20 percent slower and automatically reaches twice its initial speed in 45 seconds', () => {
     const race = newRace();
-    expect(race.speed).toBe(315);
+    expect(race.speed).toBe(315 * 0.8);
     for (let i = 0; i < 600; i++) advance(race, 1 / 60, () => 0);
-    expect(race.speed).toBeCloseTo(420, 5);
+    expect(race.speed).toBeCloseTo(308, 5);
+    for (let i = 600; i < 2700; i++) advance(race, 1 / 60, () => 0);
+    expect(race.speed).toBeCloseTo(newRace().speed * 2, 5);
   });
   it('clamps steering at the road boundaries and detects collision while crossing lanes', () => {
     const race = newRace();

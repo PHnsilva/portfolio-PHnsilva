@@ -74,7 +74,7 @@ export default function PlayBreak({ onClose }: { onClose: () => void }) {
   const race = useRef(newRace());
   const phase = useRef<Phase>('ready');
   const [view, setView] = useState<Phase>('ready');
-  const [hud, setHud] = useState({ distance: 0, speed: 126 });
+  const [hud, setHud] = useState(() => ({ distance: 0, speed: Math.round(newRace().speed * 0.4) }));
   function changePhase(next: Phase) {
     phase.current = next;
     setView(next);
@@ -120,7 +120,7 @@ export default function PlayBreak({ onClose }: { onClose: () => void }) {
   }, []);
   function start() {
     race.current = newRace();
-    setHud({ distance: 0, speed: 126 });
+    setHud({ distance: 0, speed: Math.round(race.current.speed * 0.4) });
     changePhase('running');
     canvas.current?.focus();
   }

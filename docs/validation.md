@@ -50,3 +50,13 @@ Data: 9 de outubro de 2026. Base `3daf9b82d4f9f644a3ad7477d15feb7bd675bb99`, pub
 - Dezenove testes passaram, incluindo a regressão de seleção por rolagem e a ausência de seleção ao retornar à abertura. ESLint, Prettier e build aprovados.
 - Perfil de velocidade multiplicado por 1,5: início a 126 km/h, aumento de 4,2 km/h por segundo e limite de 324 km/h. Simulação e jogo inspecionados; o painel começou a 126 km/h e avançou durante a corrida.
 - Texto, terminal e jogo inspecionados em 320 × 568 px e no desktop. Sem rolagem horizontal na prévia móvel. Captura da apresentação atualizada em `prints/about-refinement.jpg`.
+
+## Atividades de interesse e aceleração gradual
+
+Data: 9 de outubro de 2026. Base `f13f9696115202a7b61152fb06ff42829dd71895`, publicada pelo PR #5.
+
+- Apresentação em português e inglês descreve interesses por atividades: elaboração de soluções, sistemas, interfaces web e mobile, organização de tarefas, revisão, testes, manutenção e melhorias, com qualidade, segurança e eficiência. Removidas as preferências por áreas específicas e a expressão produtos digitais.
+- Corrida começa 20% mais lenta que a versão anterior e acelera automaticamente até o dobro da nova velocidade inicial após 45 segundos ativos. Indicador arredondado de 101 a 202 km/h. O teste da simulação verifica início, progressão e limite.
+- Dezenove testes passaram. ESLint, Prettier e build TypeScript/Vite aprovados.
+- Apresentação conferida no desktop e em 320 × 568 px, nas duas línguas. Sem rolagem horizontal na tela pequena. Captura atualizada em `prints/about-refinement.jpg`.
+- No navegador, painel começou em 101 km/h e chegou a 113 km/h antes da colisão. Reinício restaurou 101 km/h; pausa exibiu estado correspondente. Limite de 45 segundos validado na simulação.
