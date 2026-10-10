@@ -101,7 +101,7 @@ Os testes cobrem apresentação imediata, navegação de detalhes para seções,
 
 O motor do jogo também tem testes de aceleração, limites da pista, colisão durante mudança de faixa, passagem segura, espaçamento dos obstáculos e consistência entre taxas de quadros. No jogo, use `←` / `→` ou `A` / `D` para dirigir, `P` para pausar e `Esc` para fechar.
 
-O carro começa a 126 km/h e ganha 4,2 km/h por segundo, até 324 km/h. Esses valores são indicadores do minigame, sem pretensão de simulação física.
+O carro começa com velocidade 20% menor que a versão anterior e acelera automaticamente durante a corrida. O limite é o dobro da velocidade inicial, atingido após 45 segundos de jogo ativo. O painel arredonda os indicadores para aproximadamente 101 a 202 km/h; são valores do minigame, sem pretensão de simulação física. Pausar interrompe a progressão e reiniciar restaura a velocidade inicial.
 
 Os testes do formulário usam respostas simuladas para verificar validação dos campos, prevenção de envios simultâneos, falhas e preservação da mensagem para nova tentativa. Um teste de envio real deve conferir a aceitação pelo serviço e o recebimento no Gmail separadamente.
 

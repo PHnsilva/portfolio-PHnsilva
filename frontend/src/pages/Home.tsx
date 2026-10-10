@@ -196,16 +196,16 @@ export default function Home() {
           <p>
             {pick(
               b(
-                'Tenho preferência por backend e arquitetura de software, com foco em APIs, dados, integrações e decisões de projeto.',
-                'I prefer backend development and software architecture, with a focus on APIs, data, integrations and design decisions.',
+                'Tenho interesse na elaboração de soluções, no desenvolvimento de sistemas e na criação de interfaces web e mobile.',
+                'I am interested in designing solutions, developing software systems and creating web and mobile interfaces.',
               ),
             )}
           </p>
           <p>
             {pick(
               b(
-                'Organização de issues, revisão de código, testes e DevOps também me interessam, especialmente na entrega, manutenção e evolução de sistemas confiáveis, seguros e eficientes. Jogos e produtos digitais fazem parte dos meus interesses pessoais.',
-                'I am also interested in issue planning, code review, testing and DevOps, especially in delivering, maintaining and evolving reliable, secure and efficient systems. Games and digital products are among my personal interests.',
+                'Também me interessam a organização de tarefas, a revisão de código, os testes, a manutenção e a evolução das aplicações, com atenção à qualidade, à segurança e ao uso eficiente de recursos. Jogos fazem parte dos meus interesses pessoais.',
+                'I am also interested in task planning, code review, testing, maintenance and improving applications, with attention to quality, security and efficient use of resources. Games are among my personal interests.',
               ),
             )}
           </p>
@@ -242,32 +242,29 @@ export default function Home() {
               <div>
                 <dt>{pick(b('interesses', 'interests'))}</dt>
                 <dd>
-                  {pick(b('backend · arquitetura de software', 'backend · software architecture'))}
-                  <small>
-                    {pick(b('APIs · dados · integrações', 'APIs · data · integrations'))}
-                  </small>
+                  {pick(
+                    b('projeto e desenvolvimento de sistemas', 'software design and development'),
+                  )}
+                  <small>{pick(b('interfaces web · mobile', 'web · mobile interfaces'))}</small>
                   <small>
                     {pick(
                       b(
-                        'issues · revisão de código · testes · DevOps',
-                        'issues · code review · testing · DevOps',
+                        'organização de tarefas · revisão de código',
+                        'task planning · code review',
                       ),
                     )}
                   </small>
                   <small>
                     {pick(
-                      b(
-                        'automação · manutenção · evolução',
-                        'automation · maintenance · evolution',
-                      ),
+                      b('testes · manutenção · melhorias', 'testing · maintenance · improvements'),
                     )}
                   </small>
                   <small>
                     {pick(
-                      b('qualidade · segurança · desempenho', 'quality · security · performance'),
+                      b('qualidade · segurança · eficiência', 'quality · security · efficiency'),
                     )}
                   </small>
-                  <small>{pick(b('produtos digitais · jogos', 'digital products · games'))}</small>
+                  <small>{pick(b('jogos', 'games'))}</small>
                 </dd>
               </div>
             </dl>
