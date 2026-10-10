@@ -56,7 +56,7 @@ describe('Portfolio visitor journeys', () => {
     expect(screen.getByRole('link', { name: 'View projects' })).toBeTruthy();
     expect(document.documentElement.lang).toBe('en');
     expect(localStorage.getItem('portfolio.lang')).toBe('en');
-    await user.click(screen.getByRole('link', { name: 'Explore Sofiie' }));
+    await user.click(screen.getByRole('link', { name: 'Explore SlothBridge' }));
     expect(screen.getByRole('heading', { name: 'My contribution' })).toBeTruthy();
     view.unmount();
     mount('/projetos/meritum');
