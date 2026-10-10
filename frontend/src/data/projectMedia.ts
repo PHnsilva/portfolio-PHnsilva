@@ -42,17 +42,17 @@ export const projectMedia: Record<string, ProjectMedia> = {
     ),
     label: 'PSIHUB',
   },
-  sofiie: {
-    src: '/images/projects/sofiie.jpg',
+  'sloth-bridge': {
+    src: '/images/projects/sloth-bridge.png',
     alt: b(
-      'Interface da assistente Sofiie, com expressão visual e campo de mensagem',
-      'Sofiie assistant interface, with visual expression and message field',
+      'Documentação OpenAPI real do SlothBridge executado localmente',
+      'Actual OpenAPI documentation of SlothBridge running locally',
     ),
     caption: b(
-      'Interface local em repouso, sem conexão com o servidor.',
-      'Local interface at rest, without a server connection.',
+      'Documentação da API executada localmente, sem contas de marketplaces conectadas.',
+      'API documentation running locally, without connected marketplace accounts.',
     ),
-    label: 'SOFIIE',
+    label: 'SLOTHBRIDGE',
   },
   'sloth-signal': {
     src: '/images/projects/sloth-signal.jpg',

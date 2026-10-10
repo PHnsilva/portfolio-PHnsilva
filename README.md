@@ -24,7 +24,7 @@ Capturas da reformulação, verificadas no navegador:
 ## Funcionalidades
 
 - Apresentação imediata, com foto, formação e contatos.
-- Galeria com filtros por autoria, capturas reais e seis projetos selecionados: APAC Feminina, CalendarMate, Meritum, PsiHub, Sofiie e SlothSignal.
+- Galeria com filtros por autoria, capturas reais e seis projetos selecionados: APAC Feminina, CalendarMate, Meritum, PsiHub, SlothBridge e SlothSignal.
 - Página de detalhes por projeto, com problema, solução, participação, tecnologias e limitações.
 - Navegação entre páginas e seções, incluindo Tecnologias, com seleção acompanhando a rolagem, foco no destino, menu para celular e rota de página não encontrada.
 - Conteúdo em português e inglês, com preferência salva localmente quando disponível.
@@ -34,7 +34,7 @@ Capturas da reformulação, verificadas no navegador:
 - Pixel racer: carro que acelera sozinho, troca de faixa, obstáculos, distância, pausa e reinício; controles por teclado ou botões no celular.
 - Navegação por teclado, foco visível, link para pular conteúdo e respeito à preferência por movimento reduzido.
 
-Os cartões usam **capturas reais** dos projetos. As páginas de detalhes identificam a origem e o contexto de cada imagem. As telas de acesso são vazias, e a captura local da Sofiie está sem conexão com o servidor. Projetos em equipe têm a autoria preservada; as imagens não contêm dados clínicos ou sessões autenticadas. Veja [a origem das capturas](docs/project-images.md).
+Os cartões usam **capturas reais** dos projetos. As páginas de detalhes identificam a origem e o contexto de cada imagem. As telas de acesso são vazias; o SlothBridge mostra sua documentação OpenAPI local, sem lojas conectadas. Projetos em equipe têm a autoria preservada; as imagens não contêm dados clínicos ou sessões autenticadas. Veja [a origem das capturas](docs/project-images.md).
 
 ## Projetos em destaque
 
@@ -44,7 +44,7 @@ Os cartões usam **capturas reais** dos projetos. As páginas de detalhes identi
 | CalendarMate  | [Agendamentos e integrações](https://portfolio-phnsilva.vercel.app/projetos/calendar-mate)            | [Repositório](https://github.com/PHnsilva/CalendarMate) |
 | Meritum       | [Moeda estudantil e reconhecimento acadêmico](https://portfolio-phnsilva.vercel.app/projetos/meritum) | [Repositório](https://github.com/PHnsilva/Meritum)      |
 | PsiHub        | [Plataforma web e mobile para psicólogos](https://portfolio-phnsilva.vercel.app/projetos/psihub)      | Projeto em equipe, repositório restrito                 |
-| Sofiie        | [Assistente por texto e voz](https://portfolio-phnsilva.vercel.app/projetos/sofiie)                   | [Repositório](https://github.com/PHnsilva/Sofiie)       |
+| SlothBridge   | [Integração de marketplaces](https://portfolio-phnsilva.vercel.app/projetos/sloth-bridge)             | [Repositório](https://github.com/PHnsilva/SlothBridge)   |
 | SlothSignal   | [Notificações Web Push](https://portfolio-phnsilva.vercel.app/projetos/sloth-signal)                  | [Repositório](https://github.com/PHnsilva/SlothSignal)  |
 
 ## Tecnologias e arquitetura

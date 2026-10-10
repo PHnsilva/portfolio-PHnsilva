@@ -21,7 +21,7 @@ Seis projetos com captura real, resumo curto e até três tecnologias no cartão
 | CalendarMate  | Aplicação pessoal com agendamentos e integrações                   |
 | Meritum       | Autenticação, persistência e testes de API em um projeto acadêmico |
 | PsiHub        | Aplicação web/mobile, qualidade e trabalho em equipe               |
-| Sofiie        | Interface própria e integração web/desktop                         |
+| SlothBridge   | API reutilizável, isolamento de dados e sincronização de marketplaces |
 | SlothSignal   | Serviço reutilizável de notificações Web Push                      |
 
 As imagens e seus limites estão registrados em [project-images.md](project-images.md). Capturas de login mostram a interface de acesso, não comprovam a operação de funcionalidades internas. Dados clínicos e sessões autenticadas não são incluídos.
